@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Login - School Result System</title>
+    <title>Student Registration - School Result System</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,9 +27,9 @@
             padding: 20px;
         }
 
-        .login-container {
+        .register-container {
             width: 900px;
-            height: 500px;
+            min-height: 560px;
             background: white;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
@@ -63,7 +63,7 @@
             line-height: 1.6;
         }
 
-        .register-btn {
+        .login-btn-link {
             padding: 11px 32px;
             border: 2px solid white;
             border-radius: 30px;
@@ -75,37 +75,37 @@
             transition: 0.3s;
         }
 
-        .register-btn:hover {
+        .login-btn-link:hover {
             background: white;
             color: #00AFC0;
         }
 
         /* RIGHT SIDE */
-        .login-section {
+        .register-section {
             width: 60%;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 45px;
+            padding: 40px 45px;
         }
 
-        .login-form {
+        .register-form {
             width: 100%;
             max-width: 360px;
         }
 
-        .login-form h2 {
+        .register-form h2 {
             text-align: center;
             color: #123C4A;
             font-size: 30px;
             margin-bottom: 8px;
         }
 
-        .login-form .subtitle {
+        .register-form .subtitle {
             text-align: center;
             color: #777;
             font-size: 13px;
-            margin-bottom: 25px;
+            margin-bottom: 22px;
         }
 
         /* ERROR MESSAGE */
@@ -126,7 +126,7 @@
         /* INPUT GROUP */
         .input-group {
             position: relative;
-            margin-bottom: 18px;
+            margin-bottom: 15px;
         }
 
         .input-group .icon {
@@ -140,7 +140,7 @@
 
         .input-group input {
             width: 100%;
-            height: 48px;
+            height: 46px;
             padding: 0 15px 0 45px;
             border: none;
             outline: none;
@@ -159,24 +159,8 @@
             color: #999;
         }
 
-        .forgot-password {
-            text-align: right;
-            margin-top: -8px;
-            margin-bottom: 20px;
-        }
-
-        .forgot-password a {
-            color: #00AFC0;
-            text-decoration: none;
-            font-size: 12px;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-
-        /* LOGIN BUTTON */
-        .login-btn {
+        /* REGISTER BUTTON */
+        .register-submit-btn {
             width: 100%;
             height: 48px;
             border: none;
@@ -188,44 +172,12 @@
             font-weight: 600;
             cursor: pointer;
             transition: 0.3s;
+            margin-top: 5px;
         }
 
-        .login-btn:hover {
+        .register-submit-btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 8px 18px rgba(0, 180, 200, 0.25);
-        }
-
-        .social-text {
-            text-align: center;
-            color: #999;
-            font-size: 12px;
-            margin: 22px 0 12px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            width: 35px;
-            height: 35px;
-            border: 1px solid #ddd;
-            border-radius: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: #00D1E0;
-            color: white;
-            border-color: #00D1E0;
         }
 
         /* MOBILE */
@@ -235,17 +187,16 @@
                 padding: 15px;
             }
 
-            .login-container {
+            .register-container {
                 width: 100%;
                 max-width: 450px;
-                height: auto;
-                min-height: 600px;
+                min-height: 650px;
                 flex-direction: column;
             }
 
             .welcome-section {
                 width: 100%;
-                height: 220px;
+                height: 210px;
                 padding: 30px;
                 border-radius: 0 0 50% 50% / 0 0 30% 30%;
             }
@@ -258,9 +209,13 @@
                 margin-bottom: 15px;
             }
 
-            .login-section {
+            .register-section {
                 width: 100%;
-                padding: 35px 25px;
+                padding: 30px 25px;
+            }
+
+            .register-form h2 {
+                font-size: 26px;
             }
         }
     </style>
@@ -268,33 +223,34 @@
 
 <body>
 
-<div class="login-container">
+<div class="register-container">
 
     <!-- LEFT SIDE -->
     <div class="welcome-section">
 
-        <h1>Hello, Welcome!</h1>
+        <h1>Welcome!</h1>
 
         <p>
-            Access your academic results
-            quickly and securely.
+            Create your student account
+            and access your academic results.
         </p>
 
-        <a href="{{ route('student.register') }}" class="register-btn">
-    Register
-</a>
+        <a href="{{ route('student.login') }}" class="login-btn-link">
+            Login
+        </a>
+
     </div>
 
 
     <!-- RIGHT SIDE -->
-    <div class="login-section">
+    <div class="register-section">
 
-        <div class="login-form">
+        <div class="register-form">
 
-            <h2>Student Login</h2>
+            <h2>Student Registration</h2>
 
             <p class="subtitle">
-                Login to access your results
+                Create your account to access your results
             </p>
 
 
@@ -307,8 +263,42 @@
             @endif
 
 
-            <form method="POST" action="{{ route('student.login.submit') }}">
+            <form method="POST" action="{{ route('student.register.submit') }}">
                 @csrf
+
+                <!-- STUDENT NUMBER -->
+                <div class="input-group">
+
+                    <span class="icon">🎓</span>
+
+                    <input
+                        type="text"
+                        id="student_number"
+                        name="student_number"
+                        value="{{ old('student_number') }}"
+                        placeholder="Enter student number"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NAME -->
+                <div class="input-group">
+
+                    <span class="icon">👤</span>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
 
                 <!-- EMAIL -->
                 <div class="input-group">
@@ -336,38 +326,34 @@
                         type="password"
                         id="password"
                         name="password"
-                        placeholder="Enter your password"
+                        placeholder="Create a password"
                         required
                     >
 
                 </div>
 
 
-                <div class="forgot-password">
-                    <a href="#">
-                        Forgot Password?
-                    </a>
+                <!-- CONFIRM PASSWORD -->
+                <div class="input-group">
+
+                    <span class="icon">🔐</span>
+
+                    <input
+                        type="password"
+                        id="password_confirmation"
+                        name="password_confirmation"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
                 </div>
 
 
-                <button type="submit" class="login-btn">
-                    Login
+                <button type="submit" class="register-submit-btn">
+                    Create Student Account
                 </button>
 
             </form>
-
-
-            <p class="social-text">
-                Or continue with
-            </p>
-
-            <div class="social-icons">
-
-                <a href="#">f</a>
-                <a href="#">G</a>
-                <a href="#">in</a>
-
-            </div>
 
         </div>
 

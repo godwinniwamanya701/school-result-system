@@ -13,6 +13,32 @@ class LecturerAuthController extends Controller
         return view('auth.lecturer-login');
     }
 
+    // Show lecturer registration page
+    public function showRegister()
+    {
+        return view('auth.lecturer-register');
+    }
+
+    // Register a new lecturer
+    public function register(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:lecturers,email',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        Lecturer::create([
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
+        ]);
+
+        return redirect()
+            ->route('lecturer.login')
+            ->with('success', 'Lecturer account created successfully. You can now login.');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([

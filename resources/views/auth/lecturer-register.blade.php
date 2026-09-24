@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Student Login - School Result System</title>
+    <title>Lecturer Registration - School Result System</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
@@ -19,7 +20,7 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: #E6F4F8;
+            background: #eef7f3;
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -27,9 +28,9 @@
             padding: 20px;
         }
 
-        .login-container {
+        .register-container {
             width: 900px;
-            height: 500px;
+            min-height: 500px;
             background: white;
             border-radius: 24px;
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
@@ -40,7 +41,7 @@
         /* LEFT SIDE */
         .welcome-section {
             width: 40%;
-            background: linear-gradient(135deg, #00D1E0, #00C8D7);
+            background: linear-gradient(135deg, #0A3D4D, #16A34A);
             color: white;
             display: flex;
             flex-direction: column;
@@ -48,22 +49,23 @@
             align-items: center;
             text-align: center;
             padding: 40px;
+
             border-radius: 0 50% 50% 0 / 0 30% 70% 0;
         }
 
         .welcome-section h1 {
-            font-size: 32px;
+            font-size: 31px;
             margin-bottom: 15px;
             font-weight: 700;
         }
 
         .welcome-section p {
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 25px;
-            line-height: 1.6;
+            line-height: 1.7;
         }
 
-        .register-btn {
+        .login-link {
             padding: 11px 32px;
             border: 2px solid white;
             border-radius: 30px;
@@ -75,13 +77,13 @@
             transition: 0.3s;
         }
 
-        .register-btn:hover {
+        .login-link:hover {
             background: white;
-            color: #00AFC0;
+            color: #0A3D4D;
         }
 
         /* RIGHT SIDE */
-        .login-section {
+        .register-section {
             width: 60%;
             display: flex;
             justify-content: center;
@@ -89,19 +91,19 @@
             padding: 45px;
         }
 
-        .login-form {
+        .register-form {
             width: 100%;
             max-width: 360px;
         }
 
-        .login-form h2 {
+        .register-form h2 {
             text-align: center;
             color: #123C4A;
             font-size: 30px;
             margin-bottom: 8px;
         }
 
-        .login-form .subtitle {
+        .register-form .subtitle {
             text-align: center;
             color: #777;
             font-size: 13px;
@@ -152,36 +154,22 @@
         }
 
         .input-group input:focus {
-            box-shadow: 0 0 0 2px rgba(0, 209, 224, 0.25);
+            box-shadow: 0 0 0 2px rgba(22, 163, 74, 0.25);
         }
 
         .input-group input::placeholder {
             color: #999;
         }
 
-        .forgot-password {
-            text-align: right;
-            margin-top: -8px;
-            margin-bottom: 20px;
-        }
-
-        .forgot-password a {
-            color: #00AFC0;
-            text-decoration: none;
-            font-size: 12px;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-
-        /* LOGIN BUTTON */
-        .login-btn {
+        /* REGISTER BUTTON */
+        .register-submit-btn {
             width: 100%;
             height: 48px;
             border: none;
             border-radius: 25px;
-            background: linear-gradient(135deg, #0A3D4D, #00D1E0);
+
+            background: linear-gradient(135deg, #0A3D4D, #16A34A);
+
             color: white;
             font-family: 'Poppins', sans-serif;
             font-size: 14px;
@@ -190,42 +178,9 @@
             transition: 0.3s;
         }
 
-        .login-btn:hover {
+        .register-submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 18px rgba(0, 180, 200, 0.25);
-        }
-
-        .social-text {
-            text-align: center;
-            color: #999;
-            font-size: 12px;
-            margin: 22px 0 12px;
-        }
-
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .social-icons a {
-            width: 35px;
-            height: 35px;
-            border: 1px solid #ddd;
-            border-radius: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #555;
-            text-decoration: none;
-            font-size: 14px;
-            transition: 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: #00D1E0;
-            color: white;
-            border-color: #00D1E0;
+            box-shadow: 0 8px 18px rgba(22, 163, 74, 0.25);
         }
 
         /* MOBILE */
@@ -235,10 +190,9 @@
                 padding: 15px;
             }
 
-            .login-container {
+            .register-container {
                 width: 100%;
                 max-width: 450px;
-                height: auto;
                 min-height: 600px;
                 flex-direction: column;
             }
@@ -247,6 +201,7 @@
                 width: 100%;
                 height: 220px;
                 padding: 30px;
+
                 border-radius: 0 0 50% 50% / 0 0 30% 30%;
             }
 
@@ -254,11 +209,7 @@
                 font-size: 25px;
             }
 
-            .welcome-section p {
-                margin-bottom: 15px;
-            }
-
-            .login-section {
+            .register-section {
                 width: 100%;
                 padding: 35px 25px;
             }
@@ -268,33 +219,34 @@
 
 <body>
 
-<div class="login-container">
+<div class="register-container">
 
     <!-- LEFT SIDE -->
     <div class="welcome-section">
 
-        <h1>Hello, Welcome!</h1>
+        <h1>Welcome!</h1>
 
         <p>
-            Access your academic results
-            quickly and securely.
+            Create your lecturer account
+            to manage courses and student results.
         </p>
 
-        <a href="{{ route('student.register') }}" class="register-btn">
-    Register
-</a>
+        <a href="{{ route('lecturer.login') }}" class="login-link">
+            Login
+        </a>
+
     </div>
 
 
     <!-- RIGHT SIDE -->
-    <div class="login-section">
+    <div class="register-section">
 
-        <div class="login-form">
+        <div class="register-form">
 
-            <h2>Student Login</h2>
+            <h2>Lecturer Register</h2>
 
             <p class="subtitle">
-                Login to access your results
+                Create your lecturer account
             </p>
 
 
@@ -307,8 +259,24 @@
             @endif
 
 
-            <form method="POST" action="{{ route('student.login.submit') }}">
+            <form method="POST" action="{{ route('lecturer.register.submit') }}">
                 @csrf
+
+                <!-- NAME -->
+                <div class="input-group">
+
+                    <span class="icon">👤</span>
+
+                    <input
+                        type="text"
+                        name="name"
+                        value="{{ old('name') }}"
+                        placeholder="Enter your full name"
+                        required
+                    >
+
+                </div>
+
 
                 <!-- EMAIL -->
                 <div class="input-group">
@@ -317,7 +285,6 @@
 
                     <input
                         type="email"
-                        id="email"
                         name="email"
                         value="{{ old('email') }}"
                         placeholder="Enter your email"
@@ -334,40 +301,34 @@
 
                     <input
                         type="password"
-                        id="password"
                         name="password"
-                        placeholder="Enter your password"
+                        placeholder="Create a password"
                         required
                     >
 
                 </div>
 
 
-                <div class="forgot-password">
-                    <a href="#">
-                        Forgot Password?
-                    </a>
+                <!-- CONFIRM PASSWORD -->
+                <div class="input-group">
+
+                    <span class="icon">🔒</span>
+
+                    <input
+                        type="password"
+                        name="password_confirmation"
+                        placeholder="Confirm your password"
+                        required
+                    >
+
                 </div>
 
 
-                <button type="submit" class="login-btn">
-                    Login
+                <button type="submit" class="register-submit-btn">
+                    Create Account
                 </button>
 
             </form>
-
-
-            <p class="social-text">
-                Or continue with
-            </p>
-
-            <div class="social-icons">
-
-                <a href="#">f</a>
-                <a href="#">G</a>
-                <a href="#">in</a>
-
-            </div>
 
         </div>
 

@@ -286,9 +286,9 @@
             enter student results securely.
         </p>
 
-        <a href="#" class="register-btn">
-            Register
-        </a>
+        <a href="{{ route('lecturer.register') }}" class="register-btn">
+    Register
+</a>
 
     </div>
 

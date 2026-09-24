@@ -13,6 +13,34 @@ class StudentAuthController extends Controller
         return view('auth.student-login');
     }
 
+    // Show student registration page
+    public function showRegister()
+    {
+        return view('auth.student-register');
+    }
+
+    // Register a new student
+    public function register(Request $request)
+    {
+        $validated = $request->validate([
+            'student_number' => 'required|string|max:255|unique:students,student_number',
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255|unique:students,email',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        Student::create([
+            'student_number' => $validated['student_number'],
+            'name' => $validated['name'],
+            'email' => $validated['email'],
+            'password' => Hash::make($validated['password']),
+        ]);
+
+        return redirect()
+            ->route('student.login')
+            ->with('success', 'Student account created successfully. You can now login.');
+    }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
