@@ -297,7 +297,12 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            color: #0A3D4D;
+        }
+
+        .feature-icon svg {
+            width: 26px;
+            height: 26px;
         }
 
         .feature-card h3 {
@@ -545,10 +550,26 @@
 
         <div class="feature-grid">
 
+            <!-- Student Results -->
             <div class="feature-card">
 
                 <div class="feature-icon">
-                    🎓
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M4 4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 0 4 22V4.5Z"/>
+                        <path d="M4 4.5V19"/>
+                        <path d="M8 6h8"/>
+                        <path d="M8 10h8"/>
+                        <path d="M8 14h5"/>
+
+                    </svg>
+
                 </div>
 
                 <h3>Student Results</h3>
@@ -561,10 +582,26 @@
             </div>
 
 
+            <!-- Lecturer Management -->
             <div class="feature-card">
 
                 <div class="feature-icon">
-                    👨‍🏫
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <circle cx="9" cy="8" r="3"/>
+                        <path d="M3.5 19c.7-3.1 2.5-4.7 5.5-4.7s4.8 1.6 5.5 4.7"/>
+                        <path d="M16 4.5h4v7h-4z"/>
+                        <path d="M16 8h4"/>
+                        <path d="M18 6v4"/>
+
+                    </svg>
+
                 </div>
 
                 <h3>Lecturer Management</h3>
@@ -577,10 +614,23 @@
             </div>
 
 
+            <!-- Secure System -->
             <div class="feature-card">
 
                 <div class="feature-icon">
-                    🔒
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="1.8"
+                         stroke-linecap="round"
+                         stroke-linejoin="round">
+
+                        <path d="M12 3l7 3v5c0 4.7-2.9 8.3-7 10-4.1-1.7-7-5.3-7-10V6l7-3Z"/>
+                        <path d="m9.5 12 1.7 1.7 3.5-3.5"/>
+
+                    </svg>
+
                 </div>
 
                 <h3>Secure System</h3>
