@@ -21,8 +21,8 @@
 
         body {
             font-family: 'Poppins', sans-serif;
-            background: #f4f7fb;
-            color: #1f2937;
+            background: #f7f7fb;
+            color: #27273a;
             min-height: 100vh;
         }
 
@@ -32,11 +32,11 @@
             position: fixed;
             left: 0;
             top: 0;
-            width: 240px;
+            width: 220px;
             height: 100vh;
-            background: linear-gradient(180deg, #0A3D4D, #062C38);
+            background: #0d0d20;
             color: white;
-            padding: 25px 15px;
+            padding: 18px 12px;
             z-index: 1000;
         }
 
@@ -44,198 +44,314 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 0 12px 30px;
-            border-bottom: 1px solid rgba(255,255,255,0.12);
+            padding: 0 10px 25px;
         }
 
         .logo-icon {
-            width: 40px;
-            height: 40px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 10px;
+            width: 32px;
+            height: 32px;
+            background: #6d28d9;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            color: white;
+        }
+
+        .logo-icon svg {
+            width: 17px;
+            height: 17px;
         }
 
         .logo h2 {
-            font-size: 17px;
+            font-size: 15px;
             font-weight: 600;
+            color: #ffffff;
         }
 
-        .menu {
-            margin-top: 30px;
+        .section-title {
+            color: #77778e;
+            font-size: 9px;
+            font-weight: 600;
+            letter-spacing: 0.7px;
+            padding: 0 11px;
+            margin: 12px 0 8px;
+            text-transform: uppercase;
         }
 
         .menu a {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 11px;
             text-decoration: none;
-            color: rgba(255,255,255,0.75);
-            padding: 13px 15px;
-            border-radius: 10px;
-            margin-bottom: 8px;
-            font-size: 13px;
-            transition: 0.3s;
+            color: #a5a5b7;
+            padding: 10px 11px;
+            border-radius: 9px;
+            margin-bottom: 4px;
+            font-size: 11px;
+            transition: 0.25s;
         }
 
         .menu a:hover,
         .menu a.active {
-            background: rgba(255,255,255,0.13);
+            background: #29283d;
             color: white;
         }
 
         .menu-icon {
-            width: 22px;
-            text-align: center;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .menu-icon svg {
+            width: 15px;
+            height: 15px;
+            stroke: currentColor;
         }
 
         .sidebar-bottom {
             position: absolute;
-            bottom: 25px;
-            left: 15px;
-            right: 15px;
+            bottom: 18px;
+            left: 12px;
+            right: 12px;
         }
 
         .logout-button {
             width: 100%;
             border: none;
-            background: rgba(255,255,255,0.1);
-            color: white;
-            padding: 12px;
-            border-radius: 10px;
+            background: transparent;
+            color: #a5a5b7;
+            padding: 10px 11px;
+            border-radius: 9px;
             cursor: pointer;
             font-family: 'Poppins', sans-serif;
-            font-size: 13px;
-            transition: 0.3s;
+            font-size: 11px;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            transition: 0.25s;
         }
 
         .logout-button:hover {
-            background: rgba(255,255,255,0.2);
+            background: #29283d;
+            color: white;
+        }
+
+        .logout-icon {
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logout-icon svg {
+            width: 15px;
+            height: 15px;
         }
 
         /* ================= MAIN ================= */
 
         .main {
-            margin-left: 240px;
+            margin-left: 220px;
             min-height: 100vh;
         }
 
         /* ================= TOPBAR ================= */
 
         .topbar {
-            height: 75px;
+            height: 62px;
             background: white;
-            border-bottom: 1px solid #e8edf2;
+            border-bottom: 1px solid #eeeeF4;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0 35px;
+            padding: 0 25px;
         }
 
-        .topbar h3 {
-            color: #123C4A;
-            font-size: 18px;
-            font-weight: 600;
+        .search-box {
+            width: 310px;
+            height: 35px;
+            background: #f1f2f7;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 12px;
+            color: #a0a0b0;
+            font-size: 11px;
+        }
+
+        .search-box svg {
+            width: 14px;
+            height: 14px;
         }
 
         .student-profile {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 9px;
+        }
+
+        .notification {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #88889a;
+            margin-right: 7px;
+        }
+
+        .notification svg {
+            width: 16px;
+            height: 16px;
         }
 
         .avatar {
-            width: 38px;
-            height: 38px;
+            width: 34px;
+            height: 34px;
             border-radius: 50%;
-            background: #00AFC0;
-            color: white;
+            background: #eee8ff;
+            color: #6d28d9;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .profile-text strong {
             display: block;
-            color: #123C4A;
-            font-size: 12px;
+            color: #303044;
+            font-size: 11px;
         }
 
         .profile-text small {
-            color: #888;
-            font-size: 10px;
+            color: #9999a9;
+            font-size: 9px;
         }
 
         /* ================= CONTENT ================= */
 
         .content {
-            padding: 30px 35px;
+            padding: 25px;
         }
 
         /* ================= WELCOME ================= */
 
         .welcome {
-            background: linear-gradient(135deg, #0A3D4D, #00C8D7);
+            background: #19193a;
             color: white;
-            padding: 30px;
-            border-radius: 18px;
-            margin-bottom: 25px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            padding: 22px;
+            border-radius: 15px;
+            margin-bottom: 24px;
+            min-height: 125px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .welcome-left {
+            flex: 1;
+        }
+
+        .welcome-date {
+            color: #a9a9c1;
+            font-size: 9px;
+            text-transform: uppercase;
+            margin-bottom: 6px;
         }
 
         .welcome h1 {
-            font-size: 25px;
-            margin-bottom: 8px;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 9px;
+        }
+
+        /* Professional welcome icon */
+
+        .welcome-icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 8px;
+            background: rgba(109, 40, 217, 0.25);
+            color: #c4b5fd;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .welcome-icon svg {
+            width: 17px;
+            height: 17px;
         }
 
         .welcome p {
-            font-size: 13px;
-            opacity: 0.9;
+            color: #b9b9cd;
+            font-size: 10px;
         }
 
-        /* ================= STATS ================= */
-
-        .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 18px;
-            margin-bottom: 25px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 22px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.05);
-        }
-
-        .stat-card small {
-            color: #888;
-            font-size: 11px;
-        }
-
-        .stat-card h2 {
-            color: #123C4A;
-            font-size: 25px;
-            margin-top: 5px;
-        }
-
-        .stat-card .icon {
-            float: right;
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            background: #E6F4F8;
-            color: #00AFC0;
+        .welcome-stats {
             display: flex;
+            background: rgba(255,255,255,0.10);
+            border-radius: 10px;
+            padding: 12px 15px;
+            min-width: 210px;
+        }
+
+        .welcome-stat {
+            flex: 1;
+            padding: 0 12px;
+        }
+
+        .welcome-stat + .welcome-stat {
+            border-left: 1px solid rgba(255,255,255,0.15);
+        }
+
+        .welcome-stat small {
+            display: block;
+            color: #aaaac0;
+            font-size: 8px;
+            margin-bottom: 3px;
+        }
+
+        .welcome-stat strong {
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+        }
+
+        /* ================= SECTION HEADERS ================= */
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .section-header h3 {
+            color: #29293c;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .section-link {
+            color: #6d28d9;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: 500;
         }
 
         /* ================= INFORMATION ================= */
@@ -243,54 +359,125 @@
         .information {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 18px;
-            margin-bottom: 25px;
+            gap: 12px;
+            margin-bottom: 22px;
         }
 
         .info-card {
             background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 5px 18px rgba(0,0,0,0.05);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #eeeeF4;
+        }
+
+        .info-top {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .info-icon {
+            width: 32px;
+            height: 32px;
+            background: #f0eaff;
+            color: #6d28d9;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .info-icon svg {
+            width: 15px;
+            height: 15px;
         }
 
         .info-card small {
             display: block;
-            color: #888;
-            font-size: 11px;
-            margin-bottom: 5px;
+            color: #9999a9;
+            font-size: 9px;
         }
 
         .info-card strong {
-            color: #123C4A;
-            font-size: 14px;
+            color: #333346;
+            font-size: 11px;
             word-break: break-word;
+        }
+
+        /* ================= STATISTICS ================= */
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px;
+            margin-bottom: 22px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid #eeeeF4;
+            position: relative;
+        }
+
+        .stat-card small {
+            color: #9999a9;
+            font-size: 9px;
+        }
+
+        .stat-card h2 {
+            color: #2e2e42;
+            font-size: 20px;
+            margin-top: 4px;
+            font-weight: 600;
+        }
+
+        .stat-card .icon {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #f0eaff;
+            color: #6d28d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .stat-card .icon svg {
+            width: 15px;
+            height: 15px;
         }
 
         /* ================= RESULTS ================= */
 
         .results-card {
             background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            padding: 18px;
+            border-radius: 12px;
+            border: 1px solid #eeeeF4;
         }
 
         .results-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .results-header h3 {
-            color: #123C4A;
-            font-size: 18px;
+            color: #29293c;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .results-header span {
-            color: #00AFC0;
-            font-size: 11px;
+            color: #9999a9;
+            font-size: 9px;
         }
 
         .table-wrapper {
@@ -304,54 +491,54 @@
         }
 
         th {
-            background: #F1FAFC;
-            color: #123C4A;
-            padding: 14px;
+            background: #f7f6fb;
+            color: #656579;
+            padding: 11px;
             text-align: left;
-            font-size: 12px;
+            font-size: 9px;
             font-weight: 600;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid #eeeeF4;
         }
 
         td {
-            padding: 14px;
-            border-bottom: 1px solid #edf0f2;
-            font-size: 13px;
-            color: #555;
+            padding: 12px 11px;
+            border-bottom: 1px solid #f0f0f4;
+            font-size: 10px;
+            color: #626275;
         }
 
         tr:hover td {
-            background: #fafefe;
+            background: #fbfaff;
         }
 
         .grade {
             display: inline-block;
-            min-width: 35px;
+            min-width: 28px;
             text-align: center;
-            padding: 5px 9px;
-            border-radius: 15px;
-            background: #E6F7ED;
-            color: #15803d;
+            padding: 4px 7px;
+            border-radius: 12px;
+            background: #eee8ff;
+            color: #6d28d9;
             font-weight: 600;
-            font-size: 12px;
+            font-size: 9px;
         }
 
         .no-results {
             padding: 35px;
-            background: #F8FAFC;
-            border-radius: 10px;
+            background: #f8f8fb;
+            border-radius: 9px;
             text-align: center;
-            color: #777;
-            font-size: 13px;
+            color: #9999a9;
+            font-size: 10px;
         }
 
         /* ================= FOOTER ================= */
 
         .footer {
             text-align: center;
-            color: #999;
-            font-size: 11px;
-            padding: 25px;
+            color: #aaaaba;
+            font-size: 9px;
+            padding: 20px;
         }
 
         /* ================= MOBILE ================= */
@@ -359,22 +546,26 @@
         @media (max-width: 850px) {
 
             .sidebar {
-                width: 70px;
-                padding: 20px 10px;
+                width: 68px;
+                padding: 18px 9px;
             }
 
             .logo {
                 justify-content: center;
-                padding: 0 0 25px;
+                padding: 0 0 22px;
             }
 
             .logo h2 {
                 display: none;
             }
 
+            .section-title {
+                display: none;
+            }
+
             .menu a {
                 justify-content: center;
-                padding: 13px 5px;
+                padding: 11px 5px;
             }
 
             .menu a span:not(.menu-icon) {
@@ -382,67 +573,73 @@
             }
 
             .sidebar-bottom {
-                left: 10px;
-                right: 10px;
+                left: 9px;
+                right: 9px;
             }
 
             .logout-button {
+                justify-content: center;
                 font-size: 0;
             }
 
-            .logout-button::before {
-                content: "↪";
-                font-size: 18px;
-            }
-
             .main {
-                margin-left: 70px;
+                margin-left: 68px;
             }
 
             .stats {
                 grid-template-columns: 1fr;
             }
 
+            .welcome {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .welcome-stats {
+                width: 100%;
+            }
         }
 
         @media (max-width: 600px) {
 
             .topbar {
-                padding: 0 18px;
+                padding: 0 15px;
             }
 
-            .topbar h3 {
-                font-size: 15px;
+            .search-box {
+                width: 150px;
             }
 
             .profile-text {
                 display: none;
             }
 
+            .notification {
+                display: none;
+            }
+
             .content {
-                padding: 20px 15px;
+                padding: 18px 13px;
             }
 
             .welcome {
-                padding: 23px;
+                padding: 18px;
             }
 
             .welcome h1 {
-                font-size: 21px;
+                font-size: 17px;
             }
 
             .information {
                 grid-template-columns: 1fr;
             }
 
-            .results-card {
-                padding: 18px;
+            .welcome-stats {
+                min-width: 0;
             }
 
-            .results-header {
-                align-items: flex-start;
-                gap: 10px;
-                flex-direction: column;
+            .welcome-stat {
+                padding: 0 8px;
             }
 
         }
@@ -452,14 +649,21 @@
 
 <body>
 
-<!-- SIDEBAR -->
+<!-- ================= SIDEBAR ================= -->
 
 <div class="sidebar">
 
     <div class="logo">
 
         <div class="logo-icon">
-            🎓
+
+            <!-- Graduation cap icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M2 10l10-5 10 5-10 5L2 10z"/>
+                <path d="M6 12v5c3 2 9 2 12 0v-5"/>
+                <path d="M22 10v6"/>
+            </svg>
+
         </div>
 
         <h2>SchoolResults</h2>
@@ -467,29 +671,66 @@
     </div>
 
 
+    <div class="section-title">
+        Academic
+    </div>
+
+
     <div class="menu">
+
+        <!-- Dashboard -->
 
         <a href="{{ route('student.dashboard') }}" class="active">
 
-            <span class="menu-icon">🏠</span>
+            <span class="menu-icon">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"/>
+                    <rect x="14" y="3" width="7" height="7"/>
+                    <rect x="3" y="14" width="7" height="7"/>
+                    <rect x="14" y="14" width="7" height="7"/>
+                </svg>
+
+            </span>
 
             <span>Dashboard</span>
 
         </a>
 
 
+        <!-- Results -->
+
         <a href="#results">
 
-            <span class="menu-icon">📊</span>
+            <span class="menu-icon">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19V5"/>
+                    <path d="M4 19h16"/>
+                    <path d="M8 16v-5"/>
+                    <path d="M12 16V8"/>
+                    <path d="M16 16v-9"/>
+                </svg>
+
+            </span>
 
             <span>My Results</span>
 
         </a>
 
 
+        <!-- Information -->
+
         <a href="#information">
 
-            <span class="menu-icon">👤</span>
+            <span class="menu-icon">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="8" r="4"/>
+                    <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/>
+                </svg>
+
+            </span>
 
             <span>My Information</span>
 
@@ -498,6 +739,8 @@
     </div>
 
 
+    <!-- LOGOUT -->
+
     <div class="sidebar-bottom">
 
         <form method="POST" action="{{ route('student.logout') }}">
@@ -505,7 +748,19 @@
             @csrf
 
             <button type="submit" class="logout-button">
-                Logout
+
+                <span class="logout-icon">
+
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M10 17l5-5-5-5"/>
+                        <path d="M15 12H3"/>
+                        <path d="M21 19V5a2 2 0 0 0-2-2h-6"/>
+                    </svg>
+
+                </span>
+
+                <span>Logout</span>
+
             </button>
 
         </form>
@@ -515,7 +770,7 @@
 </div>
 
 
-<!-- MAIN -->
+<!-- ================= MAIN ================= -->
 
 <div class="main">
 
@@ -524,10 +779,29 @@
 
     <div class="topbar">
 
-        <h3>Student Dashboard</h3>
+        <div class="search-box">
+
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="M20 20l-4-4"/>
+            </svg>
+
+            <span>Search</span>
+
+        </div>
 
 
         <div class="student-profile">
+
+            <div class="notification">
+
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"/>
+                    <path d="M10 21h4"/>
+                </svg>
+
+            </div>
+
 
             <div class="avatar">
 
@@ -553,38 +827,138 @@
     </div>
 
 
-    <!-- CONTENT -->
+    <!-- ================= CONTENT ================= -->
 
     <div class="content">
 
 
-        <!-- WELCOME -->
+        <!-- ================= WELCOME ================= -->
 
         <div class="welcome">
 
-            <h1>
-                Welcome, {{ $student->name }} 👋
-            </h1>
+            <div class="welcome-left">
 
-            <p>
-                View your academic results and student information from your dashboard.
-            </p>
+                <div class="welcome-date">
+                    Student Dashboard
+                </div>
+
+
+                <h1>
+
+                    <span class="welcome-icon">
+
+                        <!-- Professional welcome/sparkles icon -->
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M12 3l1.2 3.8L17 8l-3.8 1.2L12 13l-1.2-3.8L7 8l3.8-1.2L12 3z"/>
+
+                            <path d="M19 14l.6 1.9 1.9.6-1.9.6L19 19l-.6-1.9-1.9-.6 1.9-.6L19 14z"/>
+
+                            <path d="M5 15l.5 1.5L7 17l-1.5.5L5 19l-.5-1.5L3 17l1.5-.5L5 15z"/>
+
+                        </svg>
+
+                    </span>
+
+                    <span>
+                        Welcome back, {{ $student->name }}
+                    </span>
+
+                </h1>
+
+
+                <p>
+                    View your academic results and student information.
+                </p>
+
+            </div>
+
+
+            <div class="welcome-stats">
+
+                <div class="welcome-stat">
+
+                    <small>
+                        Total Results
+                    </small>
+
+                    <strong>
+                        {{ $student->results->count() }}
+                    </strong>
+
+                </div>
+
+
+                <div class="welcome-stat">
+
+                    <small>
+                        Average Marks
+                    </small>
+
+                    <strong>
+
+                        @if ($student->results->count() > 0)
+
+                            {{ number_format($student->results->avg('marks'), 1) }}%
+
+                        @else
+
+                            0%
+
+                        @endif
+
+                    </strong>
+
+                </div>
+
+            </div>
 
         </div>
 
 
-        <!-- STATISTICS -->
+        <!-- ================= STATISTICS ================= -->
+
+        <div class="section-header">
+
+            <h3>
+                Academic Overview
+            </h3>
+
+        </div>
+
 
         <div class="stats">
 
 
+            <!-- Total Courses -->
+
             <div class="stat-card">
 
                 <div class="icon">
-                    📚
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M4 19V5"/>
+                        <path d="M4 19h16"/>
+                        <path d="M8 16v-5"/>
+                        <path d="M12 16V8"/>
+                        <path d="M16 16v-9"/>
+
+                    </svg>
+
                 </div>
 
-                <small>Total Courses</small>
+                <small>
+                    Total Courses
+                </small>
 
                 <h2>
                     {{ $student->results->count() }}
@@ -593,13 +967,27 @@
             </div>
 
 
+            <!-- Average Marks -->
+
             <div class="stat-card">
 
                 <div class="icon">
-                    📈
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M3 17l6-6 4 4 8-9"/>
+                        <path d="M17 6h4v4"/>
+
+                    </svg>
+
                 </div>
 
-                <small>Average Marks</small>
+                <small>
+                    Average Marks
+                </small>
 
                 <h2>
 
@@ -618,53 +1006,146 @@
             </div>
 
 
+            <!-- Account Status -->
+
             <div class="stat-card">
 
                 <div class="icon">
-                    🎓
+
+                    <svg viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2">
+
+                        <path d="M12 3l7 4v5c0 5-3 8-7 9-4-1-7-4-7-9V7l7-4z"/>
+                        <path d="M9 12l2 2 4-4"/>
+
+                    </svg>
+
                 </div>
 
-                <small>Account Status</small>
+                <small>
+                    Account Status
+                </small>
 
-                <h2 style="font-size:18px;">
+                <h2 style="font-size:17px;">
                     Active
                 </h2>
 
             </div>
 
-        </div>
-
-
-        <!-- INFORMATION -->
-
-        <div class="information" id="information">
-
-
-            <div class="info-card">
-
-                <small>Student Number</small>
-
-                <strong>
-                    {{ $student->student_number }}
-                </strong>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <small>Email Address</small>
-
-                <strong>
-                    {{ $student->email }}
-                </strong>
-
-            </div>
 
         </div>
 
 
-        <!-- RESULTS -->
+        <!-- ================= INFORMATION ================= -->
+
+        <div class="section-header" id="information">
+
+            <h3>
+                Student Information
+            </h3>
+
+        </div>
+
+
+        <div class="information">
+
+
+            <!-- Student Number -->
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+                            <path d="M7 8h10"/>
+                            <path d="M7 12h4"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Student Number
+                        </small>
+
+                        <strong>
+                            {{ $student->student_number }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Email -->
+
+            <div class="info-card">
+
+                <div class="info-top">
+
+                    <div class="info-icon">
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="2">
+
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+                            <path d="M3 7l9 6 9-6"/>
+
+                        </svg>
+
+                    </div>
+
+
+                    <div>
+
+                        <small>
+                            Email Address
+                        </small>
+
+                        <strong>
+                            {{ $student->email }}
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- ================= RESULTS ================= -->
+
+        <div class="section-header">
+
+            <h3>
+                My Results
+            </h3>
+
+            <a href="#results" class="section-link">
+                View all →
+            </a>
+
+        </div>
+
 
         <div class="results-card" id="results">
 
@@ -772,7 +1253,7 @@
     </div>
 
 
-    <!-- FOOTER -->
+    <!-- ================= FOOTER ================= -->
 
     <div class="footer">
 

@@ -14,6 +14,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/results/all-students', [ResultController::class, 'allStudentsResults'])
+    ->name('results.all-students');
+
 Route::resource('results', ResultController::class);
 
 Route::resource('students', StudentController::class);
@@ -85,3 +88,4 @@ Route::post('/lecturer/logout', [LecturerAuthController::class, 'logout'])
 
 Route::get('/lecturer/dashboard', [LecturerDashboardController::class, 'index'])
     ->name('lecturer.dashboard');
+   

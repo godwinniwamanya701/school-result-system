@@ -15,19 +15,33 @@ class ResultController extends Controller
 
         return view('results.index', compact('results'));
     }
+    public function allStudentsResults()
+{
+    $students = Student::with(['results.course'])->get();
 
-    public function create(Request $request)
-    {
-        $students = Student::all();
-
-        $course = null;
-
-        if ($request->has('course_id')) {
-            $course = Course::findOrFail($request->course_id);
-        }
-
-        return view('results.create', compact('students', 'course'));
+    return view('results.all-students', compact('students'));
+}
+public function create(Request $request)
+{
+    if (!session()->has('lecturer_id')) {
+        return redirect()->route('lecturer.login');
     }
+
+    $students = Student::all();
+
+    // Get only courses belonging to the logged-in lecturer
+    $courses = Course::where('lecturer_id', session('lecturer_id'))->get();
+
+    // If lecturer clicked "Enter Results" from a specific course,
+    // that course will be selected automatically.
+    $selectedCourseId = $request->course_id;
+
+    return view('results.create', compact(
+        'students',
+        'courses',
+        'selectedCourseId'
+    ));
+}
 
     public function store(Request $request)
     {

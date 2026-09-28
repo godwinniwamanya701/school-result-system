@@ -8,9 +8,11 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -37,7 +39,8 @@
             overflow: hidden;
         }
 
-        /* LEFT SIDE */
+        /* ================= LEFT SIDE ================= */
+
         .welcome-section {
             width: 40%;
             background: linear-gradient(135deg, #00D1E0, #00C8D7);
@@ -80,7 +83,8 @@
             color: #00AFC0;
         }
 
-        /* RIGHT SIDE */
+        /* ================= RIGHT SIDE ================= */
+
         .register-section {
             width: 60%;
             display: flex;
@@ -108,7 +112,8 @@
             margin-bottom: 22px;
         }
 
-        /* ERROR MESSAGE */
+        /* ================= ERROR MESSAGE ================= */
+
         .error {
             background: #fff1f2;
             border: 1px solid #fecdd3;
@@ -123,7 +128,8 @@
             margin: 3px 0;
         }
 
-        /* INPUT GROUP */
+        /* ================= INPUT GROUP ================= */
+
         .input-group {
             position: relative;
             margin-bottom: 15px;
@@ -134,14 +140,24 @@
             left: 15px;
             top: 50%;
             transform: translateY(-50%);
-            font-size: 17px;
+            width: 18px;
+            height: 18px;
             color: #777;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .input-group .icon svg {
+            width: 17px;
+            height: 17px;
+            stroke: currentColor;
         }
 
         .input-group input {
             width: 100%;
             height: 46px;
-            padding: 0 15px 0 45px;
+            padding: 0 50px 0 45px;
             border: none;
             outline: none;
             border-radius: 8px;
@@ -159,7 +175,37 @@
             color: #999;
         }
 
-        /* REGISTER BUTTON */
+        /* ================= PASSWORD SHOW / HIDE ================= */
+
+        .password-toggle {
+            position: absolute;
+            right: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border: none;
+            background: transparent;
+            color: #777;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+        }
+
+        .password-toggle:hover {
+            color: #00AFC0;
+        }
+
+        .password-toggle svg {
+            width: 19px;
+            height: 19px;
+            stroke: currentColor;
+        }
+
+        /* ================= REGISTER BUTTON ================= */
+
         .register-submit-btn {
             width: 100%;
             height: 48px;
@@ -180,7 +226,8 @@
             box-shadow: 0 8px 18px rgba(0, 180, 200, 0.25);
         }
 
-        /* MOBILE */
+        /* ================= MOBILE ================= */
+
         @media (max-width: 750px) {
 
             body {
@@ -217,7 +264,9 @@
             .register-form h2 {
                 font-size: 26px;
             }
+
         }
+
     </style>
 </head>
 
@@ -225,10 +274,13 @@
 
 <div class="register-container">
 
-    <!-- LEFT SIDE -->
+    <!-- ================= LEFT SIDE ================= -->
+
     <div class="welcome-section">
 
-        <h1>Welcome!</h1>
+        <h1>
+            Welcome!
+        </h1>
 
         <p>
             Create your student account
@@ -242,34 +294,74 @@
     </div>
 
 
-    <!-- RIGHT SIDE -->
+    <!-- ================= RIGHT SIDE ================= -->
+
     <div class="register-section">
 
         <div class="register-form">
 
-            <h2>Student Registration</h2>
+            <h2>
+                Student Registration
+            </h2>
 
             <p class="subtitle">
                 Create your account to access your results
             </p>
 
 
+            <!-- ERROR MESSAGE -->
+
             @if ($errors->any())
+
                 <div class="error">
+
                     @foreach ($errors->all() as $error)
-                        <p>{{ $error }}</p>
+
+                        <p>
+                            {{ $error }}
+                        </p>
+
                     @endforeach
+
                 </div>
+
             @endif
 
 
+            <!-- REGISTRATION FORM -->
+
             <form method="POST" action="{{ route('student.register.submit') }}">
+
                 @csrf
 
+
                 <!-- STUDENT NUMBER -->
+
                 <div class="input-group">
 
-                    <span class="icon">🎓</span>
+                    <span class="icon">
+
+                        <!-- Student ID icon -->
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <rect x="3" y="4" width="18" height="16" rx="2"/>
+
+                            <path d="M7 8h10"/>
+
+                            <path d="M7 12h4"/>
+
+                            <path d="M7 16h6"/>
+
+                        </svg>
+
+                    </span>
+
 
                     <input
                         type="text"
@@ -284,9 +376,28 @@
 
 
                 <!-- NAME -->
+
                 <div class="input-group">
 
-                    <span class="icon">👤</span>
+                    <span class="icon">
+
+                        <!-- User icon -->
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <circle cx="12" cy="8" r="4"/>
+
+                            <path d="M4 21c0-4 3.5-7 8-7s8 3 8 7"/>
+
+                        </svg>
+
+                    </span>
+
 
                     <input
                         type="text"
@@ -301,9 +412,28 @@
 
 
                 <!-- EMAIL -->
+
                 <div class="input-group">
 
-                    <span class="icon">✉</span>
+                    <span class="icon">
+
+                        <!-- Email icon -->
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <rect x="3" y="5" width="18" height="14" rx="2"/>
+
+                            <path d="M3 7l9 6 9-6"/>
+
+                        </svg>
+
+                    </span>
+
 
                     <input
                         type="email"
@@ -318,9 +448,28 @@
 
 
                 <!-- PASSWORD -->
+
                 <div class="input-group">
 
-                    <span class="icon">🔒</span>
+                    <span class="icon">
+
+                        <!-- Padlock icon -->
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <rect x="5" y="10" width="14" height="10" rx="2"/>
+
+                            <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+                        </svg>
+
+                    </span>
+
 
                     <input
                         type="password"
@@ -330,13 +479,58 @@
                         required
                     >
 
+
+                    <!-- Show / Hide Password -->
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('password', 'eyeIcon1', this)"
+                        aria-label="Show password"
+                    >
+
+                        <svg id="eyeIcon1"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/>
+
+                            <circle cx="12" cy="12" r="2.5"/>
+
+                        </svg>
+
+                    </button>
+
                 </div>
 
 
                 <!-- CONFIRM PASSWORD -->
+
                 <div class="input-group">
 
-                    <span class="icon">🔐</span>
+                    <span class="icon">
+
+                        <!-- Padlock icon -->
+
+                        <svg viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <rect x="5" y="10" width="14" height="10" rx="2"/>
+
+                            <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
+
+                        </svg>
+
+                    </span>
+
 
                     <input
                         type="password"
@@ -346,8 +540,36 @@
                         required
                     >
 
+
+                    <!-- Show / Hide Confirm Password -->
+
+                    <button
+                        type="button"
+                        class="password-toggle"
+                        onclick="togglePassword('password_confirmation', 'eyeIcon2', this)"
+                        aria-label="Show password"
+                    >
+
+                        <svg id="eyeIcon2"
+                             viewBox="0 0 24 24"
+                             fill="none"
+                             stroke="currentColor"
+                             stroke-width="1.8"
+                             stroke-linecap="round"
+                             stroke-linejoin="round">
+
+                            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/>
+
+                            <circle cx="12" cy="12" r="2.5"/>
+
+                        </svg>
+
+                    </button>
+
                 </div>
 
+
+                <!-- REGISTER BUTTON -->
 
                 <button type="submit" class="register-submit-btn">
                     Create Student Account
@@ -360,6 +582,50 @@
     </div>
 
 </div>
+
+
+<!-- ================= PASSWORD SCRIPT ================= -->
+
+<script>
+
+function togglePassword(passwordId, eyeId, button) {
+
+    const password = document.getElementById(passwordId);
+    const eyeIcon = document.getElementById(eyeId);
+
+    if (password.type === 'password') {
+
+        password.type = 'text';
+
+        button.setAttribute('aria-label', 'Hide password');
+
+        eyeIcon.innerHTML = `
+            <path d="M3 3l18 18"/>
+
+            <path d="M10.6 10.6a2 2 0 0 0 2.8 2.8"/>
+
+            <path d="M9.9 5.2A10.7 10.7 0 0 1 12 5c6.5 0 10 7 10 7a18.3 18.3 0 0 1-3.1 3.9"/>
+
+            <path d="M6.2 6.2C3.7 8.1 2 12 2 12s3.5 7 10 7a9.7 9.7 0 0 0 3.3-.6"/>
+        `;
+
+    } else {
+
+        password.type = 'password';
+
+        button.setAttribute('aria-label', 'Show password');
+
+        eyeIcon.innerHTML = `
+            <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z"/>
+
+            <circle cx="12" cy="12" r="2.5"/>
+        `;
+
+    }
+
+}
+
+</script>
 
 </body>
 </html>

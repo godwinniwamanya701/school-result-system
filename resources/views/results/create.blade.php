@@ -1,5 +1,7 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +9,13 @@
     <title>Add Student Result - School Result System</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
     <style>
 
@@ -86,15 +92,15 @@
             color: #0A3D4D;
         }
 
+
         /* MAIN */
 
         .container {
             max-width: 850px;
-
             margin: 40px auto;
-
             padding: 0 20px;
         }
+
 
         /* PAGE TITLE */
 
@@ -104,17 +110,15 @@
 
         .page-heading h1 {
             color: #123C4A;
-
             font-size: 27px;
-
             margin-bottom: 6px;
         }
 
         .page-heading p {
             color: #777;
-
             font-size: 13px;
         }
+
 
         /* FORM CARD */
 
@@ -127,6 +131,7 @@
 
             box-shadow: 0 7px 25px rgba(0,0,0,0.07);
         }
+
 
         /* ERROR */
 
@@ -148,7 +153,6 @@
 
         .error-box strong {
             display: block;
-
             margin-bottom: 8px;
         }
 
@@ -159,6 +163,7 @@
         .error-box li {
             margin-bottom: 3px;
         }
+
 
         /* FORM GRID */
 
@@ -174,7 +179,6 @@
 
         .form-group {
             display: flex;
-
             flex-direction: column;
         }
 
@@ -226,35 +230,8 @@
             color: #aaa;
         }
 
-        /* COURSE BOX */
 
-        .course-box {
-            background: #F1FAFC;
-
-            border: 1px solid #d9eef2;
-
-            padding: 15px 17px;
-
-            border-radius: 10px;
-        }
-
-        .course-box .course-code {
-            color: #00AFC0;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            margin-bottom: 3px;
-        }
-
-        .course-box .course-name {
-            color: #123C4A;
-
-            font-size: 14px;
-
-            font-weight: 600;
-        }
+        /* NO COURSE MESSAGE */
 
         .no-course {
             background: #fff7ed;
@@ -268,7 +245,10 @@
             border-radius: 10px;
 
             font-size: 13px;
+
+            margin-top: 10px;
         }
+
 
         /* BUTTONS */
 
@@ -308,7 +288,6 @@
 
         .cancel-button:hover {
             background: #f5f5f5;
-
             color: #333;
         }
 
@@ -342,6 +321,7 @@
             box-shadow: 0 6px 15px rgba(0,175,192,0.28);
         }
 
+
         /* FOOTER */
 
         .footer {
@@ -353,6 +333,7 @@
 
             padding: 20px;
         }
+
 
         /* MOBILE */
 
@@ -412,9 +393,11 @@
         }
 
     </style>
+
 </head>
 
 <body>
+
 
 <!-- HEADER -->
 
@@ -426,7 +409,9 @@
             🎓
         </div>
 
-        <h2>School Result System</h2>
+        <h2>
+            School Result System
+        </h2>
 
     </div>
 
@@ -437,9 +422,11 @@
 </div>
 
 
+
 <!-- MAIN -->
 
 <div class="container">
+
 
     <!-- PAGE HEADING -->
 
@@ -454,6 +441,7 @@
         </p>
 
     </div>
+
 
 
     <!-- FORM CARD -->
@@ -488,6 +476,7 @@
         @endif
 
 
+
         <form action="{{ route('results.store') }}" method="POST">
 
             @csrf
@@ -504,7 +493,11 @@
                         Student
                     </label>
 
-                    <select name="student_id" id="student_id" required>
+                    <select
+                        name="student_id"
+                        id="student_id"
+                        required
+                    >
 
                         <option value="">
                             -- Select Student --
@@ -530,50 +523,55 @@
                 </div>
 
 
+
                 <!-- COURSE -->
 
                 <div class="form-group full">
 
-                    <label>
+                    <label for="course_id">
                         Course
                     </label>
 
+                    <select
+                        name="course_id"
+                        id="course_id"
+                        required
+                    >
 
-                    @if ($course)
+                        <option value="">
+                            -- Select Course --
+                        </option>
 
-                        <input
-                            type="hidden"
-                            name="course_id"
-                            value="{{ $course->id }}"
-                        >
+                        @foreach ($courses as $course)
 
-                        <div class="course-box">
-
-                            <div class="course-code">
+                            <option
+                                value="{{ $course->id }}"
+                                {{ old('course_id', $selectedCourseId) == $course->id ? 'selected' : '' }}
+                            >
 
                                 {{ $course->course_code }}
-
-                            </div>
-
-                            <div class="course-name">
-
+                                -
                                 {{ $course->course_name }}
 
-                            </div>
+                            </option>
 
-                        </div>
+                        @endforeach
 
-                    @else
+                    </select>
+
+
+                    @if ($courses->isEmpty())
 
                         <div class="no-course">
 
-                            No course was selected.
+                            You do not have any courses assigned to you yet.
 
                         </div>
 
                     @endif
 
                 </div>
+
 
 
                 <!-- MARKS -->
@@ -599,6 +597,7 @@
                 </div>
 
 
+
                 <!-- SEMESTER -->
 
                 <div class="form-group">
@@ -617,6 +616,7 @@
                     >
 
                 </div>
+
 
 
                 <!-- ACADEMIC YEAR -->
@@ -642,6 +642,7 @@
             </div>
 
 
+
             <!-- ACTIONS -->
 
             <div class="form-actions">
@@ -653,7 +654,6 @@
                     Cancel
                 </a>
 
-
                 <button
                     type="submit"
                     class="save-button"
@@ -663,11 +663,13 @@
 
             </div>
 
+
         </form>
 
     </div>
 
 </div>
+
 
 
 <!-- FOOTER -->
@@ -678,5 +680,7 @@
 
 </div>
 
+
 </body>
+
 </html>
